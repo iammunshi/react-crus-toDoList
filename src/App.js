@@ -74,8 +74,8 @@ class App extends Component {
     const {myText,list,btnVal,isSearching,searchList} = this.state;
     const actualList = isSearching ? searchList : list;
     return (
-      <div className="cstmStyle">
-
+      <div className="App">
+        <div className="App-header">
         <h4>ToDo List {isSearching && <span>Searching...</span>}</h4>
         <input className="searchInput" placeholder="Search from list..." onChange={this.search}/>
         <input onChange={this.setText} placeholder="Add item.." value={myText}/>
@@ -86,6 +86,7 @@ class App extends Component {
           return <li key={Math.random() * index}>{item} <button className="editBtn" onClick={this.edit.bind(this, index, item)}>Edit</button> | <button className="deleteBtn" onClick={this.delete.bind(this, index)}>Delete</button></li>
         })}
         </ul>
+        </div>
       </div>
     );
   }
